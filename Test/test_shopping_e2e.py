@@ -12,7 +12,8 @@ from SauceDemo_Framework.pageObjects.personaldetails_confirmation import purchas
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import time
 
-test_data_path = '../SauceDemo_Framework/Data/test_data.json'
+base_dir = os.path.dirname(os.path.abspath(__file__))
+test_data_path = os.path.abspath(os.path.join(base_dir, '..', 'SauceDemo_Shopping_Framework', 'Data', 'test_data.json'))
 with open(test_data_path) as f:
     test_data = json.load(f)
     test_list = test_data["data"]
