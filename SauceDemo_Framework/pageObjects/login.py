@@ -21,5 +21,6 @@ class LoginPage:
         self.driver.find_element(*self.username_input).send_keys(username)
         self.driver.find_element(*self.password_input).send_keys(password)
         self.driver.find_element(*self.login_button).click()
+        self.driver.implicitly_wait(4)
         error_msg = self.driver.find_element(*self.error_msg).text
         assert "Sorry, this user has been locked out" in error_msg
