@@ -1,0 +1,16 @@
+{
+  "data" : [
+    {
+      "userid" : "standard_user",
+      "password" : "secret_sauce",
+      "product_name" : ["Sauce Labs Bolt T-Shirt","Sauce Labs Onesie"],
+      "delete_product" : "Sauce Labs Bike Light"
+
+    }
+
+  ]
+
+
+
+
+}
