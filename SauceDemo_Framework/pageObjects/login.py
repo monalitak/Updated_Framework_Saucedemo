@@ -22,7 +22,7 @@ class LoginPage:
         self.driver.find_element(*self.username_input).send_keys(username)
         self.driver.find_element(*self.password_input).send_keys(password)
         self.driver.find_element(*self.login_button).click()
-        self.driver.implicitly_wait(4)
+        
         try:
             error_element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//h3")))
             return error_element.text
