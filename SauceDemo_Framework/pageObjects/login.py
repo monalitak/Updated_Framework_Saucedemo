@@ -22,5 +22,12 @@ class LoginPage:
         self.driver.find_element(*self.password_input).send_keys(password)
         self.driver.find_element(*self.login_button).click()
         self.driver.implicitly_wait(4)
-        error_msg = self.driver.find_element(*self.error_msg).text
-        assert "Sorry, this user has been locked out" in error_msg
+        try:
+        error_element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//h3"))
+        )
+        return error_element.text
+    except Exception as e:
+        self.driver.save_screenshot("locked_user_failure.png")
+        raise e
+        
