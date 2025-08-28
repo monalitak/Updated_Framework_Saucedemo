@@ -12,7 +12,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import time
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-test_data_path = os.path.join(base_dir, '..', 'SauceDemo_Shopping_Framework', 'Data', 'test_data.json')
+test_data_path = os.path.join(base_dir, '..', 'SauceDemo_Framework', 'Data', 'test_data.json')
 with open(test_data_path) as f:
     test_data = json.load(f)
     test_list = test_data["data"]
