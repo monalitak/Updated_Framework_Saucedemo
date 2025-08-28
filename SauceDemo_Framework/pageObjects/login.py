@@ -24,11 +24,9 @@ class LoginPage:
         self.driver.find_element(*self.login_button).click()
         self.driver.implicitly_wait(4)
         try:
-        error_element = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//h3"))
-        )
-        return error_element.text
-    except Exception as e:
-        self.driver.save_screenshot("locked_user_failure.png")
-        raise e
+            error_element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//h3")))
+            return error_element.text
+        except Exception as e:
+            self.driver.save_screenshot("locked_user_failure.png")
+            raise e
         
